@@ -1,75 +1,23 @@
-# Nuxt 3 Minimal Starter
+# Quentin Watt's email tester
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This is a simple email tester for sending emails from Vercel through a local SMTP server.
 
-## Setup
+It's made with [Nuxt 3](https://nuxt.com/docs/getting-started/introduction), [TailwindCSS](https://tailwindcss.com/).
 
-Make sure to install the dependencies:
+## Try it
 
-```bash
-# npm
-npm install
+1. Clone the repository
+2. Run `pnpm install`
+3. Run `pnpm run dev`
+4. Go to `http://localhost:3000`
+5. Fill the form and send the email
 
-# pnpm
-pnpm install
+## How it works
 
-# yarn
-yarn install
+The email is sent to a local SMTP server, which is configured to send emails to the email address you put in the form.
 
-# bun
-bun install
-```
+The email address and password for the SMTP server are stored in the `.env` file.
 
-## Development Server
+## Customize it
 
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+You can customize the email address and password for the SMTP server in the `.env` file.

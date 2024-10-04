@@ -24,8 +24,11 @@ const props = withDefaults(defineProps<Props>(), {
 
 const show = ref(true);
 
+const emit = defineEmits(['close']);
+
 const closeAlert = () => {
   show.value = false;
+  emit('close');
 };
 
 const startCloseTimer = () => {

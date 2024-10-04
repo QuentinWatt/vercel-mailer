@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent="sendEmail" class="space-y-4">
-    <Alert v-if="alert.show" :type="alert.type" :message="alert.message" />
+    <Alert v-if="alert.show" :type="alert.type" :message="alert.message" @close="alert.show = false" />
     <div>
       <label for="to" class="block text-sm font-medium text-gray-700">To:</label>
       <input

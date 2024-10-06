@@ -1,49 +1,38 @@
 <template>
   <form @submit.prevent="sendEmail" class="space-y-4">
     <Alert v-if="alert.show" :type="alert.type" :message="alert.message" @close="alert.show = false" />
-    <div>
-      <label for="to" class="block text-sm font-medium text-gray-700">To:</label>
-      <input
-        type="email"
-        placeholder="example@email.test"
-        id="to"
-        v-model="email.to"
-        required
-        class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2"
-      >
-    </div>
-    <div>
-      <label for="subject" class="block text-sm font-medium text-gray-700">Subject:</label>
-      <input
-        type="text"
-        id="subject"
-        placeholder="The reason for your email"
-        v-model="email.subject"
-        required
-        class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2"
-      >
-    </div>
-    <div>
-      <label for="body" class="block text-sm font-medium text-gray-700">Body:</label>
-      <textarea
-        id="body"
-        v-model="email.body"
-        placeholder="The body of your email"
-        rows="4"
-        required
-        class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 p-2"
-      ></textarea>
-    </div>
-    <div>
-      <button
-        type="submit"
-        :disabled="loading"
-        class="inline-flex justify-center py-2 px-4 w-full border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 disabled:opacity-50 disabled:cursor-not-allowed"
-      >
-        <Loader v-if="loading" color="white" />
-        <span v-else>Send Email</span>
-      </button>
-    </div>
+    <TextInput
+      id="to"
+      label="To:"
+      type="email"
+      placeholder="example@email.test"
+      v-model="email.to"
+      required
+    />
+    <TextInput
+      id="subject"
+      label="Subject:"
+      type="text"
+      placeholder="The reason for your email"
+      v-model="email.subject"
+      required
+    />
+    <TextareaInput
+      id="body"
+      label="Body:"
+      v-model="email.body"
+      placeholder="The body of your email"
+      :rows="4"
+      required
+    />
+    <Button
+      type="submit"
+      :disabled="loading"
+      :loading="loading"
+      color="red"
+    >
+      Send Email
+    </Button>
   </form>
 </template>
 
